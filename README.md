@@ -9,3 +9,11 @@ A continuación se han utilizado los diversos datos que nos proporciona para cre
 
 ![Ejemplo dashboard](/img/dashboard_ejemplo.png)
 
+## Configuración de un shelly
+
+Documentar como se realiza la configuración de un shelly1 o otro modelo extra.
+
+## Parte extra 
+Con node-red, y creacion de interfaz de usuario tocha para enchufarlo y toda la movida.
+
+
