@@ -17,3 +17,6 @@ Documentar como se realiza la configuración de un shelly1 o otro modelo extra.
 Con node-red, y creacion de interfaz de usuario tocha para enchufarlo y toda la movida.
 
 
+## Clase 25/03 
+Saber los datos que nos proporciona el shelly ,enchufarlo y apagarlo con el request
+Crear un dashboard en node-red para ver estos datos y enchufarlo y ver su estado
