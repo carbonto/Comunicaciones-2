@@ -1,0 +1,3 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Uso de la plataforma IoT Ubidots}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Evidencias del trabajo realizado}{2}{subsection.1.1}%
