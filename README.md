@@ -12,7 +12,8 @@ A continuación se han utilizado los diversos datos que nos proporciona para cre
 ![Ejemplo dashboard](/img/dashboard_ejemplo.png)
 
 ### Ampliacion de conocimientos
-Conexión de esp-32 con ubidots mediante mqtt
+Envio y adquisicion de datos con el ESP-32 a través de ubidots.
+Todo el codigo se encuentra en la carpeta src dentro de Ampliacion_Ubidots
 
 ## Configuración de un shelly
 
