@@ -115,11 +115,151 @@ variable que queremos leer. Esto no proporciona los valores de la variable por t
 	\label{fig:temp}
 \end{figure}
 
+\section{Uso de relés inteligentes}
+\subsection{Configuración de Shelly 1}
+Shelly es uno de los dispositivos inteligentes que permiten 
+el control por Wifi de la iluminación o los electrodomesticos.
+Shelly usa la red wifi para la interconexión de sus dispositivos, esto 
+hace que su configuración sea muy fácil y rapida. A continuación \ref*{fig:conexion_Shelly1_red} se muestra un diagrama 
+de como realizar su conexionado a la red.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{conexion_Shelly1_red.png}
+	\caption{Esquema de conexión de Shelly 1 a la red electrica} 
+	\label{fig:conexion_Shelly1_red}
+\end{figure}
+\pagebreak
+Despues de haber realizado la instalación del dispositivo, el mismo crea una red
+wifi a la cual debes conectarte para realizar la configuración.
+\begin{itemize}
+    \item Primero tienes que acceder la web de configuración del 
+    dispositivo introduciendo la ip \texttt{192.168.33.1} en el navegador.
+    \item Dentro de la web se puede comprobar si es el shelly que queremos configurar apagando y encendiendo el dispositivo.
+    \item En el apartado \textit{Internet \& Security} se selecciona \textit{Wifi-Mode-Client} donde se introduce nuestra red wifi que queremos que se conecte el dispositivo.
+    \item También se puede realizar la configuración desde la aplicación \textit{Shelly Cloud}.
+\end{itemize}
+
+\subsection{Relés con node-red mediante http request}
+A través de node-red se pueden controlar los diversos relés que se encuentran conectados a la red, a través
+del nodo \texttt{httprequest}.\\
 
 
+Para ver toda la información \ref{fig:Ver_informacion_rele} que nos proporciona el relé utilizamos el nodo \texttt{httprequest} con la siguiente direccion \texttt{http://192.168.10.110/emeter/0}
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{Ver_informacion_rele.png}
+	\caption{Esquema node-red para ver informacón del relé} 
+	\label{fig:Ver_informacion_rele}
+\end{figure}
 
+Para cambiar el estado \ref{fig:Cambiar_estado_rele} al que se encuentra el relé utilizamos el nodo \texttt{httprequest} con la siguiente direccion \texttt{http://192.168.10.109/relay/0?turn=on}
+para cambiar el estado cambiamos el apartado turn a on o off.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{enchufar_apagar_rele.png}
+	\caption{Esquema node-red para cambiar el estado del relé} 
+	\label{fig:Cambiar_estado_rele}
+\end{figure}
+
+Finalmente se realizó un dashboard \ref{fig:dashboard_rele} en el cual se obtienen los parametros proporcionados por el relé como son la potencia y el voltaje 
+los cuales se leen emeter como se ha explicado previamente, para leer solamente los parametros que deseamos se ha utilizado un nodo function 
+donde extraemos del \textit{json} esos parametros. También se ha realizado mediante un nodo button que permite encender o apagar el relé de una manera mas sencilla.
+\pagebreak
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{dashboard_nodos.png}
+	\caption{Nodos para realizar el dashboard} 
+	\label{fig:Nodos_dashboard}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{dashboard_relé.png}
+	\caption{Dashboard de datos y encender el relé} 
+	\label{fig:dashboard_rele}
+\end{figure}
+\pagebreak
+De manera extra se probaron también otras funciones de los relés que se encontraban
+en el laboratorio. Primero se probó el encender el relé durante 10 segundos \ref{fig:encender_10_sec} mediante la siguiente dirección 
+\\\texttt{http://192.168.10.110/relay/0?turn=on\&timer=10} donde en el apartado timer se especifica el tiempo en segundos
+que va permanecer encendido el relé.También se probó con el relé que controla la persiana \ref{fig:abrir_persiana} donde se probó a abrirla completamente con
+la dirección \texttt{http://192.168.10.110/roller/0?go=open}.Y finalmente a abrir la persiana en un 30 porciento \ref{fig:abrir_30_porciento} mediante la siguiente dirección 
+\texttt{http://192.168.10.110/roller/0?go=to\_pos\&roller\_pos=30} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{encender_10_sec.png}
+	\caption{Encender relé durante 10 segundos} 
+	\label{fig:encender_10_sec}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{abrir_persiana.png}
+	\caption{Encender el relé de la persiana} 
+	\label{fig:abrir_persiana}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{abrir_persiana_30_porciento.png}
+	\caption{Encendemos el relé de la persiana en 30 porciento}
+	\label{fig:abrir_30_porciento}
+\end{figure}
+
+\subsection{Relés con node-red mediante MQTT}
+Como http request presenta limitaciones a la hora de controlar nodos ya que este protocolo al ser una petición http tiende mas 
+a caerse o a fallar.Utilizamos el protocolo mqtt que acepta mayor numero de peticiones a la vez y es mas fiable. Para ello al igual que en http request nos
+conectamos a la misma red wifi en la que se encuentran los relés pero a diferencia de http request ahora nos conectamos al servidor mqtt que se ha creado en dicha red.
+A continuación se muestra un ejemplo de mandar un mensaje y recibirlo mediante mqtt:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{mqtt_enviar_recibir.png}
+    \caption{Enviar y recibir mensajes mediante mqtt} 
+    \label{fig:mqtt_enviar_recibir}
+\end{figure}
+
+Para obtener la información de los relés mediante \textit{MQTT} se ha utilizado un nodo \texttt{mqtt} que nos permite 
+recibir los mensajes de los relés con el topic \texttt{shellies/\#} 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{info_shelly_mqtt.png}
+    \caption{Obtener toda la información del relé mediante mqtt} 
+    \label{fig:info_shelly_mqtt}
+\end{figure}
+\pagebreak
+Para obtener otro parametros \ref{fig:voltaje_pontencia_mqtt} como pueden ser el voltaje o la potencia, se cambia el topic del nodo mqtt.
+Por ejemplo en el caso de la potencia y el voltaje los topics son los siguientes \texttt{shellies/shellyem1/emeter/0/voltage}
+\texttt{shellies/shellyem1/emeter/0/power} 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Voltaje_potencia_mqtt.png}
+    \caption{Obtener el voltaje y la potencia del relé mediante mqtt}
+    \label{fig:voltaje_pontencia_mqtt}
+\end{figure}
+
+También se pueden apagar y encender los relés mediante mqtt al igual que hemos hecho con http request, pero a la hora 
+del mundo real mqtt es mucho mas interesante que http request ya que aguanta un mayor numero de llamadas y es mas fiable evitando 
+que el relé falle o se caiga la conexión como pudimos ver de manera experimental en el laboratorio con mqtt y toda la gente realizando peticiones
+funcionaba de una manera correcta mientras que con http request presentaba alguna caida.\\
+
+
+A continuación se muestra un ejemplo de como encender y apagar el relé mediante mqtt:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{enchufar_apagar_rele.png}
+    \caption{Encender y apagar relé mediante mqtt}
+    \label{fig:encender_apagar_mqtt}
+\end{figure}
+
+\pagebreak
 \section{Bibliografia}
 
 \url{https://help.ubidots.com/en/articles/748067-connect-an-esp32-devkitc-to-ubidots-over-mqtt}\\

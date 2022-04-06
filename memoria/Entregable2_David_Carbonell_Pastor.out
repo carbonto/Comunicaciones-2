@@ -3,4 +3,8 @@
 \BOOKMARK [2][-]{subsection.1.2}{Ampliacion de conocimientos}{section.1}% 3
 \BOOKMARK [3][-]{subsubsection.1.2.1}{Enviar valores de del ESP-32 a Ubidots}{subsection.1.2}% 4
 \BOOKMARK [3][-]{subsubsection.1.2.2}{Recibir valores de Ubidots a ESP-32}{subsection.1.2}% 5
-\BOOKMARK [1][-]{section.2}{Bibliografia}{}% 6
+\BOOKMARK [1][-]{section.2}{Uso de rel\351s inteligentes}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Configuraci\363n de Shelly 1}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.2}{Rel\351s con node-red mediante http request}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Rel\351s con node-red mediante MQTT}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Bibliografia}{}% 10

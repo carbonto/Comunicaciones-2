@@ -4,4 +4,8 @@
 \contentsline {subsection}{\numberline {1.2}Ampliacion de conocimientos}{3}{subsection.1.2}%
 \contentsline {subsubsection}{\numberline {1.2.1}Enviar valores de del ESP-32 a Ubidots}{3}{subsubsection.1.2.1}%
 \contentsline {subsubsection}{\numberline {1.2.2}Recibir valores de Ubidots a ESP-32}{5}{subsubsection.1.2.2}%
-\contentsline {section}{\numberline {2}Bibliografia}{5}{section.2}%
+\contentsline {section}{\numberline {2}Uso de relés inteligentes}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Configuración de Shelly 1}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Relés con node-red mediante http request}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Relés con node-red mediante MQTT}{10}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Bibliografia}{12}{section.3}%
