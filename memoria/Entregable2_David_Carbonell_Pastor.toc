@@ -1,3 +1,7 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Uso de la plataforma IoT Ubidots}{2}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Evidencias del trabajo realizado}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Ampliacion de conocimientos}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Enviar valores de del ESP-32 a Ubidots}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Recibir valores de Ubidots a ESP-32}{5}{subsubsection.1.2.2}%
+\contentsline {section}{\numberline {2}Bibliografia}{5}{section.2}%
