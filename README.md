@@ -3,29 +3,12 @@
 ## Parte Ubi-dots
 
 ### Evidencias del trabajo realizado
-Se ha utilizado la plataforma ubidots enlanzandola con node-red para usarla de una manera mas simple sin necesidad de programación en python. A través de node-red enviando la información del nodo de openweather al node de ubidots, nos aparece en la pagina de ubidots en el apartado devices los parametros que nos proporciona en formato json de una manera mas visual donde podemos ver los distintos datos que tenemos.
+Se ha utilizado la plataforma IoT Ubidots a trav ́es de Node-Red como
+se puede ver en la figura 1 de esta manera se simplifica el apartado de
+la programación ya que de otra manera se ha de realizar mediante codigo
+python para lo que pretendemos implementar.
+### Ampliacion de conocimientos 
+Se va a realizar una lectura y escritura de datos obtenidos mediante el
+ESP-32 y la plataforma ubidots todo el codigo se encuentra adjunto en la
+practica y en el github para su consulta
 
-A continuación se han utilizado los diversos datos que nos proporciona para crear un simple dashboard, el cual presenta una menor complejidad y mayores funcionalidades que los dashboard creados con node-red en la anterior practica.
-
-![](/img/node_red_ubidots.png)
-
-![Ejemplo dashboard](/img/dashboard_ejemplo.png)
-
-### Ampliacion de conocimientos
-Envio y adquisicion de datos con el ESP-32 a través de ubidots.
-Todo el codigo se encuentra en la carpeta src dentro de Ampliacion_Ubidots
-
-## Configuración de un shelly
-
-Documentar como se realiza la configuración de un shelly1 o otro modelo extra.
-
-## Parte extra 
-Con node-red, y creacion de interfaz de usuario tocha para enchufarlo y toda la movida.
-
-
-## Clase 25/03 
-Saber los datos que nos proporciona el shelly ,enchufarlo y apagarlo con el request
-Crear un dashboard en node-red para ver estos datos y enchufarlo y ver su estado
-
-## Crear un broker mqtt
-Enchufar el esp32 a un broker mqttt(Extra)
