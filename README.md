@@ -12,3 +12,12 @@ Se va a realizar una lectura y escritura de datos obtenidos mediante el
 ESP-32 y la plataforma ubidots todo el codigo se encuentra adjunto en la
 practica y en el github para su consulta
 
+## Uso de relés inteligentes
+
+### Configuracion Shelly 1
+### Relés con node-red mediante http request
+### Rel ́es con node-red mediante MQTT
+
+## Ampliación MQTT: Conectar ESP32 a broker MQTT
+Uso de un broker gratuito para mandar y recibir mensajes a través del esp32
+
