@@ -7,4 +7,6 @@
 \BOOKMARK [2][-]{subsection.2.1}{Configuraci\363n de Shelly 1}{section.2}% 7
 \BOOKMARK [2][-]{subsection.2.2}{Rel\351s con node-red mediante http request}{section.2}% 8
 \BOOKMARK [2][-]{subsection.2.3}{Rel\351s con node-red mediante MQTT}{section.2}% 9
-\BOOKMARK [1][-]{section.3}{Bibliografia}{}% 10
+\BOOKMARK [1][-]{section.3}{Ampliaci\363n MQTT: Conectar ESP32 a broker MQTT}{}% 10
+\BOOKMARK [1][-]{section.4}{Conclusiones}{}% 11
+\BOOKMARK [1][-]{section.5}{Bibliografia}{}% 12

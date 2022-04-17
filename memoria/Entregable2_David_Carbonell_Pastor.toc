@@ -8,4 +8,6 @@
 \contentsline {subsection}{\numberline {2.1}Configuración de Shelly 1}{5}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Relés con node-red mediante http request}{7}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Relés con node-red mediante MQTT}{10}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Bibliografia}{12}{section.3}%
+\contentsline {section}{\numberline {3}Ampliación MQTT: Conectar ESP32 a broker MQTT}{12}{section.3}%
+\contentsline {section}{\numberline {4}Conclusiones}{13}{section.4}%
+\contentsline {section}{\numberline {5}Bibliografia}{14}{section.5}%

@@ -254,10 +254,52 @@ A continuación se muestra un ejemplo de como encender y apagar el relé mediant
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{enchufar_apagar_rele.png}
+    \includegraphics[width=\textwidth]{encender_apagar_mqtt.png}
     \caption{Encender y apagar relé mediante mqtt}
     \label{fig:encender_apagar_mqtt}
 \end{figure}
+\pagebreak
+\section{Ampliación MQTT: Conectar ESP32 a broker MQTT} 
+Para esta aplicacion vamos a utlizar un broker gratuito llamado \textit{EMQX} que nos permite conectar nuestra aplicación a un broker mqtt.
+La propia web nos ofrece un interfaz \ref{fig:intefaz_web} en la cual podemos ver los diversos mensajes que nos llega o enviamos a través de MQTT.
+Se ha realizado una prueba mediante node-red para probar las funcionalidades que presenta, en este caso se ha probado mandar mensajes como aparecen
+a continuación:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Captura_mqtt_prueba.png}
+    \caption{Prueba de la interfaz que nos ofrece el broker MQTT}
+    \label{fig:intefaz_web}
+\end{figure}
+
+La aplicacion que vamos a hacer es leer el valor de adc6 y mandarlo al broker mqtt, para ello hacemos uso 
+de las librerías \texttt{Wifi.h} y \texttt{PubSubClient.h} que nos permiten conectarnos con el ESP-32 a través de wifi 
+al broker.
+
+Finalmente obtenemos el siguiente resultado por puerto serie \ref{fig:puerto_serie} y este resultado en la web del broker mqtt \ref{fig:resultado_web}
+no coincide el valor del adc al ser un broker publico le llegan los valores con cierto retraso y el que aparece es el de una prueba anterior.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{puerto_serie.png}
+    \caption{Informacion que nos muestra el esp32 en el puerto serie}
+    \label{fig:puerto_serie}
+\end{figure}
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Resultado_broker.png}
+    \caption{Valor del adc en el broker mqtt}
+    \label{fig:resultado_web}
+\end{figure}
+
+
+\section{Conclusiones}
+En el desarrollo de esta practica se ha conseguido aprender a utliziar plataformas IoT como en nuestro caso
+ubidots.Además de profundizar en el uso de relés inteligentes y sus diversas funcionalidad y protocolos de comunicacion. Finalmente se ha aprendido
+a utilizar el protocolo MQTT para comunicarnos con otros dispotivos y sensores de la red.
+
 
 \pagebreak
 \section{Bibliografia}
@@ -265,4 +307,6 @@ A continuación se muestra un ejemplo de como encender y apagar el relé mediant
 \url{https://help.ubidots.com/en/articles/748067-connect-an-esp32-devkitc-to-ubidots-over-mqtt}\\
 \url{https://industrial.ubidots.com}\\
 \url{https://www.hackster.io/shahizat005/building-an-esp32-based-iot-weather-station-with-ubidots-05adcc}\\
+\url{https://www.emqx.com/en/mqtt/public-mqtt5-broker}\\
+
 \end{document}
